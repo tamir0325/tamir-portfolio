@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="mn" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Баасанжав Тамир — tamir.db</title>
+  <meta name="description" content="Баасанжав Тамир — Мэдээллийн системийн менежментийн оюутан, backend & data хөгжүүлэгчийн портфолио. SQL бичиж намайг танина уу.">
+  <meta property="og:title" content="tamir.db — Баасанжав Тамир">
+  <meta property="og:description" content="SELECT * FROM tamir; — SQL консол хэлбэрийн портфолио.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Цонхны гарчиг: SQL Developer шиг харагдуулна -->
+    <header class="titlebar">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+          <ellipse cx="16" cy="7" rx="11" ry="4"/>
+          <path d="M5 7v18c0 2.2 4.9 4 11 4s11-1.8 11-4V7"/>
+          <path d="M5 16c0 2.2 4.9 4 11 4s11-1.8 11-4"/>
+        </svg>
+        <span>tamir<span class="dim">.db</span></span>
+      </div>
+      <div class="conn"><span class="dot"></span><span class="conn-text">connected as guest</span></div>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Гэрэл/харанхуй горим солих" title="Горим солих">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" class="fill"/></svg>
+      </button>
+    </header>
+
+    <!-- Танилцуулга -->
+    <section class="hero">
+      <p class="hero-kicker">-- Сайн байна уу, би бол</p>
+      <h1 class="hero-name">Баасанжав Тамир</h1>
+      <p class="hero-role">Мэдээллийн системийн менежмент · Backend &amp; Data</p>
+      <p class="hero-motto">«Өгөгдлөөс утга, кодоос үнэ цэн бүтээнэ.»</p>
+      <p class="hero-hint">Намайг танихын тулд доорх консолд <code>SQL</code> бичээрэй, эсвэл зүүн талын хүснэгт дээр дараарай.</p>
+    </section>
+
+    <main class="workspace">
+      <aside class="schema" aria-label="Өгөгдлийн сангийн схем">
+        <div class="schema-block">
+          <div class="schema-title">SCHEMA · TAMIR</div>
+          <ul id="tableList" class="schema-list"></ul>
+        </div>
+        <div class="schema-block">
+          <div class="schema-title">SAVED QUERIES</div>
+          <ul id="savedList" class="schema-list"></ul>
+        </div>
+      </aside>
+
+      <section class="console" aria-label="SQL консол">
+        <div id="output" class="output" aria-live="polite"></div>
+        <form id="prompt" class="prompt" autocomplete="off">
+          <label for="query" class="ps">SQL&gt;</label>
+          <input id="query" type="text" spellcheck="false" autocapitalize="off" autocorrect="off"
+                 placeholder="SELECT * FROM projects;" aria-label="SQL query">
+          <button type="submit" class="run">Run ▶</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="statusbar">
+      <span>UFE · SWE334</span>
+      <span class="hide-sm">↑↓ түүх · Tab нөхөх · Enter ажиллуулах</span>
+      <span id="clock"></span>
+    </footer>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/sql.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
